@@ -1,0 +1,113 @@
+body {
+    /* Globala variabler */
+    /*--main-background-color:hsl(345, 100%, 98%);*/
+    --main-font-color:hsl(345,   50%, 75%);
+    /* --main-font-color: darkgrey; */
+    --title-font-family: 'Italianno';
+    --section-font-family: 'Italianno';
+    --body-font-family: 'Overlock', cursive;
+    
+    background-color: var(--main-background-color);
+    margin: 0;
+}
+div {
+    margin-top: 2%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+}
+.text { 
+    font-family: var(--body-font-family);
+    padding: 3%;
+    background-color: var(--main-background-color);
+    color: var(--main-font-color);
+    text-align: center;
+    /* height: 50vh; */
+ }
+
+ .text p{
+     font-size: 4vw;
+     margin: 0 auto;
+ }
+
+.text h2{
+    text-align: center;
+    font-family: var(--section-font-family);
+    color: var(--main-font-color);
+    font-size: 10vw;
+    margin: 0;
+}
+.rubrik{
+    /*font-family: "Verdana", cursive, sans-serif;*/
+    font-family: var(--title-font-family);
+    color: var(--main-font-color);
+    text-align: left;
+    position: absolute;
+    left: 2%;
+    top: 0%;
+    width: 98%;
+    font-size: 7vw;
+}
+
+.rubrik h1{
+    margin: 0;
+}
+.rubrik h2{
+    margin: 0;
+    font-size: 5vw;
+    margin-left: 0%;
+    margin-top: 5%;
+}
+
+.heading{
+    position: relative;
+    margin-top: 0;
+}
+.bild{
+    margin-top: 0;
+    max-width:100%;
+    height:auto;
+}
+.klocka{
+    text-align: center;
+    font-family: var(--section-font-family);
+     font-size: 6vw;
+     color: var(--main-font-color);
+}
+
+.nedräkning{
+    text-align: center;
+    font-family: var(--section-font-family);
+    color: var(--main-font-color);
+}
+
+.map{
+    width: 90vw;
+    height: 60vh;
+    border: none;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    .text { 
+        font-family: var(--body-font-family);
+        padding: 3%;
+        background-color: var(--main-background-color);
+        color: var(--main-font-color);
+        text-align: center;
+    }
+
+    .text p{
+        font-size: 3vw;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+   
+   .text h2{
+       text-align: center;
+       font-family: var(--section-font-family);
+       color: var(--main-font-color);
+       font-size: 10vw;
+       margin: 0;
+   }
+}

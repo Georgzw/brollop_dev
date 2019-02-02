@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta   charset="UTF-8" 
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href ="https://fonts.googleapis.com/css?family=Niconne|Scada|Italianno|Arya|Jaldi|Katibeh|Mukta+Mahee|Overlock|Overpass+Mono|Padauk|Simonetta|Suravaram|Vollkorn|Wire+One" rel="stylesheet">
+<title>Frida och Georg</title>
+</head>
+
+<body>
+    <div class ="heading">
+        <div class="rubrik">
+            <h1>Georg och Frida </h1>
+            <h2> Vi gifter oss 
+                <br> den 28-06-2019
+                <br> kl 15.00
+                <!-- <br> --> i Lidingö kyrka    
+             </h2>         
+        </div>
+
+        <div class= "bild">
+            <img    src="IMG_8199.JPG";
+                    alt="Frida och Georg på Hallskär 2017,
+                     foto Inga-lill von Zedtwitz-Liebenstein";
+                    style="max-width:100%;height:auto">
+        </div>
+    </div>
+
+   <div class="text" id="Info"> 
+       <h2> Den viktigaste informationen</h2>
+        <p>
+           Välkommen till Frida och Georgs bröllopssida!
+           <br> Snart är det dags och du har troligtvis fått vårt "Save the date" med länk till den här sidan.
+                Vi hoppas att just du kan komma och fira vår bröllopsdag med oss. Det skulle göra oss väldigt glada.
+            <br> 
+           <br> Här kommer ni kunna hitta all information om vårt bröllop och sidan kommer att uppdateras löpande med ny information ju närmare vi kommer.
+           <br> Nu har nedräkningen (officiellt) börjat!!
+        </p>
+    </div>
+
+    <div class="text" id="Info"> 
+        <h2>Praktisk information</h2>
+         <p>
+            Här skriver vi något om vad man behöver veta, 
+            vart man lämnar OSA, 
+            Swich nummer / QR kod för bidrags insättning 
+            kontakt uppgifter till toastmaster
+         </p>
+     </div>
+
+     <div class="text" id="Info"> 
+        <h2>Hitta till kyrkan och festen!</h2>
+        <iframe class = "map" src="https://api.mapbox.com/styles/v1/georgzw/cjrl0esm8422o2snmlz4tj3w0.html?fresh=true&title=true&access_token=pk.eyJ1IjoiZ2Vvcmd6dyIsImEiOiJjajNwcHJwczQwMDE5MzJxZHQxNjZwMDRlIn0.v7lp4zFYs9VL-972Ag7ZDg#13.23/59.35948/18.16689"></iframe>
+     </div>
+
+       <div class ="klocka">
+
+        <p id="nedräkning">
+        </p>
+
+        <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jun 28, 2019 15:00:00").getTime();
+                
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+                
+                    // Get todays date and time
+                    var now = new Date().getTime();
+                    
+                    // Find the distance between now an the count down date
+                    var distance = countDownDate - now;
+                    
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    // Output the result in an element with id="nedräckning"
+                    document.getElementById("nedräkning").innerHTML = days + " dagar " + hours + " timmar "
+                    + minutes + " min ";// + seconds + " s ";
+                    
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "Nu är det dags!";
+                    }
+                }, 1000);
+                </script>
+   </div> 
+   
+
+</body>
+
+</html>
