@@ -8,6 +8,8 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href ="https://fonts.googleapis.com/css?family=Niconne|Scada|Italianno|Arya|Jaldi|Katibeh|Mukta+Mahee|Overlock|Overpass+Mono|Padauk|Simonetta|Suravaram|Vollkorn|Wire+One" rel="stylesheet">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 <title>Frida och Georg</title>
 </head>
 
@@ -54,8 +56,90 @@
 
      <div class="text" id="Info"> 
         <h2>Hitta till kyrkan och festen!</h2>
-        <iframe class = "map" src="https://api.mapbox.com/styles/v1/georgzw/cjrl0esm8422o2snmlz4tj3w0.html?fresh=true&title=true&access_token=pk.eyJ1IjoiZ2Vvcmd6dyIsImEiOiJjajNwcHJwczQwMDE5MzJxZHQxNjZwMDRlIn0.v7lp4zFYs9VL-972Ag7ZDg#13.23/59.35948/18.16689"></iframe>
-     </div>
+    </div>
+        <div id='map'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2Vvcmd6dyIsImEiOiJjajNwcHJwczQwMDE5MzJxZHQxNjZwMDRlIn0.v7lp4zFYs9VL-972Ag7ZDg';
+        const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/georgzw/cjrl0esm8422o2snmlz4tj3w0',
+        center: [18.176,59.363],
+        zoom: 11.5
+        });
+
+        map.getCanvas().style.position  = 'static'
+        
+        map.on('load',function(){
+            // Poi data as a geojson object
+            poiData =  {
+                            "type": "FeatureCollection",
+                            "features": [{
+                                "type": "Feature",
+                                "properties": {
+                                    "name": "Lidingö Kyrka",
+                                    "icon": "jewelry-store-15"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [18.157331, 59.366730]
+                                }},
+                                {
+                                "type": "Feature",
+                                "properties": {
+                                    "name": "Långängensgård",
+                                    "icon": "restaurant-15"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [18.193507, 59.357204]
+                                }}
+                            ]
+                        }
+            //Create a new source            
+            map.addSource('poiData', {
+                "type": "geojson",
+                "data": poiData
+            });
+
+            //Create new map layer
+            map.addLayer({
+                "id": "poiLayer",
+                "type": "symbol",
+                "source": "poiData",
+                "layout": {
+                    "icon-image":['get', 'icon'],
+                    "icon-allow-overlap": true,
+                    "text-field": ['get', 'name'],
+                    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                    "text-size": 11,
+                    "text-letter-spacing": 0.05,
+                    "text-offset": [0, 1.5]
+                },
+                "paint": {
+                    "text-color": "#202",
+                    "text-halo-color": "#fff",
+                    "text-halo-width": 2
+                }
+                });
+
+        });
+        /* map.on('load', function() {
+                map.addLayer({
+                    "id": "points",
+                    "type": "symbol",
+                    "source": { 
+                        "type": "geojson",
+                        "data":
+                    },
+                    "layout": {
+                        "icon-image": "cat",
+                        "icon-size": 0.25
+                    }
+                });
+        });
+    }); */
+        </script>     
+        
 
        <div class ="klocka">
 
