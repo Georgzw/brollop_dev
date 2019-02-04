@@ -24,27 +24,21 @@
 </head>
 
 <body>
-    <div class ="heading">
-        <div class="rubrik">
-            <h1>Georg och Frida </h1>
-            <h2> Vi gifter oss 
-                <br> den 28-06-2019
-                <br> kl 15.00
-                <!-- <br> --> i Lidingö kyrka    
-             </h2>         
-        </div>
-
-        <div class= "bild">
-            <img    src="IMG_8199.JPG";
-                    alt="Frida och Georg på Hallskär 2017,
-                     foto Inga-lill von Zedtwitz-Liebenstein";
-                    style="max-width:100%;height:auto">
-        </div>
+    <div class="container-fluid m-0 p-0">
+        
+        <div class="position-absolute">
+                <h1>Georg och Frida </h1>
+                <h2> Vi gifter oss 
+                    <br> den 28-06-2019
+                    <br> kl 15.00
+                    <!-- <br> --> i Lidingö kyrka    
+                 </h2>         
+            </div>
+            <img src="IMG_8199.JPG" class="img-fluid">
     </div>
-
-   <div class="text" id="Info"> 
-       <h2> Den viktigaste informationen</h2>
-        <p>
+   <div class="container-fluid  m-0 p-0" id="Info"> 
+       <h2 class="text-center"> Den viktigaste informationen</h2>
+        <p class="text-center">
            Välkommen till Frida och Georgs bröllopssida!
            <br> Snart är det dags och du har troligtvis fått vårt "Save the date" med länk till den här sidan.
                 Vi hoppas att just du kan komma och fira vår bröllopsdag med oss. Det skulle göra oss väldigt glada.
@@ -54,9 +48,9 @@
         </p>
     </div>
 
-    <div class="text" id="Info"> 
-        <h2>Praktisk information</h2>
-         <p>
+    <div class="container-fluid  m-0 p-0" id="Info"> 
+        <h2 class="text-center">Praktisk information</h2>
+         <p class="text-center">
             Här skriver vi något om vad man behöver veta, 
             vart man lämnar OSA, 
             Swich nummer / QR kod för bidrags insättning 
@@ -64,9 +58,9 @@
          </p>
      </div>
 
-     <div class="text" id="Info"> 
-        <h2>Hitta till kyrkan och festen!</h2>
-    </div>
+     <div class="container-fluid  m-0 p-0" id="Info"> 
+        <h2 class="text-center">Hitta till kyrkan och festen!</h2>
+    
         <div id='map'></div>
         <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2Vvcmd6dyIsImEiOiJjajNwcHJwczQwMDE5MzJxZHQxNjZwMDRlIn0.v7lp4zFYs9VL-972Ag7ZDg';
@@ -150,7 +144,7 @@
     }); */
         </script>     
         
-
+    </div>
        <div class ="klocka">
 
         <p id="nedräkning">
